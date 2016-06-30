@@ -1,0 +1,26 @@
+
+<div>
+    <h2><span>User Info</span> {{vm.userInfo.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Birth Date</span></dt>
+        <dd>
+            <span>{{vm.userInfo.birthDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span>User</span></dt>
+        <dd>
+            {{vm.userInfo.userId}}
+        </dd>
+        <dt><span>Address</span></dt>
+        <dd>
+            <a ui-sref="address-detail({id:vm.userInfo.addressId})">{{vm.userInfo.addressId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

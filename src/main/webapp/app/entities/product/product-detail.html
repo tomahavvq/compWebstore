@@ -1,0 +1,36 @@
+
+<div>
+    <h2><span>Product</span> {{vm.product.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Name</span></dt>
+        <dd>
+            <span>{{vm.product.name}}</span>
+        </dd>
+        <dt><span>Price</span></dt>
+        <dd>
+            <span>{{vm.product.price}}</span>
+        </dd>
+        <dt><span>Units In Stock</span></dt>
+        <dd>
+            <span>{{vm.product.unitsInStock}}</span>
+        </dd>
+        <dt><span>Manufacturer</span></dt>
+        <dd>
+            <span>{{vm.product.manufacturer}}</span>
+        </dd>
+        <dt><span>Category</span></dt>
+        <dd>
+            <span ng-repeat="category in vm.product.categories">
+                <a ui-sref="category-detail({id: {{category.id}}})">{{category.name}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>
